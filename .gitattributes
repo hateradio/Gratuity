@@ -1,0 +1,13 @@
+* text=auto
+
+# These files are text and should be normalized (Convert crlf => lf)
+*.gitattributes text
+.gitignore text
+*.md text
+
+*.java          text
+*.json          text
+*.properties    text
+*.txt           text
+
+*.bat           eol=crlf

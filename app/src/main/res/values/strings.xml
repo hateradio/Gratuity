@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Gratuity</string>
+    <string name="activity_main_title">Hello World!</string>
+    <string name="activity_main_total">Current Total</string>
+    <string name="activity_main_gratuity">Gratuity:</string>
+    <string name="activity_main_gratuity_default">15%</string>
+    <string name="activity_main_tip">Tip:</string>
+    <string name="empty">%</string>
+</resources>
