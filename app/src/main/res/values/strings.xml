@@ -1,9 +1,19 @@
 <resources>
     <string name="app_name">Gratuity</string>
     <string name="activity_main_title">Hello World!</string>
+
     <string name="activity_main_total">Current Total</string>
+
     <string name="activity_main_gratuity">Gratuity:</string>
+
     <string name="activity_main_gratuity_default">15%</string>
     <string name="activity_main_tip">Tip:</string>
-    <string name="empty">%</string>
+
+    <string name="empty">_</string>
+    <string name="empty_cash">$0.00</string>
+
+    <string name="activity_main_tip_value">Gratuity:</string>
+    <string name="activity_main_subtotal">Subtotal:</string>
+
+    <string name="activity_main_calculate">Calculate</string>
 </resources>

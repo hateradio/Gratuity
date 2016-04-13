@@ -7,66 +7,143 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.theory.gratuity.MainActivity">
+    tools:context="com.example.theory.gratuity.MainActivity"
+    android:background="#ffeeeeee"
+    >
 
-
-    <LinearLayout
-        android:orientation="vertical"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:background="#efffffff"
+        >
 
         <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:ems="10"
-                android:textSize="@dimen/text_size_normal"
-                android:id="@+id/totalAmount"
-                android:hint="@string/activity_main_total"
-                android:layout_weight="1" />
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/form"
-            android:layout_marginTop="@dimen/activity_vertical_margin">
+            android:orientation="vertical">
 
-            <TextView
-                android:layout_width="0dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/activity_main_tip"
-                android:textSize="@dimen/text_size_normal"
-                android:id="@+id/tip" />
+                android:orientation="horizontal">
 
-            <SeekBar
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:textSize="@dimen/text_size_normal"
-                android:id="@+id/seekBar"
-                android:indeterminate="false" />
+                <EditText
+                    android:id="@+id/currentTotal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="@string/activity_main_total"
+                    android:inputType="numberDecimal"
+                    android:textSize="@dimen/text_size_normal"
+                    />
 
-            <TextView
-                android:layout_width="0sp"
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/form"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="@dimen/text_size_normal"
-                android:text="@string/activity_main_gratuity_default"
-                android:id="@+id/tipPercent" />
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/activity_main_tip"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <SeekBar
+                    android:id="@+id/seekBar"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:indeterminate="false"
+                    android:max="30"
+                    android:progress="15"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <TextView
+                    android:id="@+id/tipPercent"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="@string/activity_main_gratuity_default"
+                    android:textSize="@dimen/text_size_normal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:orientation="horizontal">
+
+                <!--<RelativeLayout-->
+                    <!--android:layout_width="fill_parent"-->
+                    <!--android:layout_height="fill_parent">-->
+
+                    <!--<Button-->
+                        <!--android:id="@+id/calculate"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_alignParentRight="true"-->
+                        <!--android:text="@string/activity_main_calculate"-->
+                        <!--android:layout_alignParentEnd="true" />-->
+                    <!--&lt;!&ndash;android:layout_centerInParent="true"-->
+                    <!--/>-->
+                <!--</RelativeLayout>-->
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="@string/activity_main_tip_value"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <TextView
+                    android:id="@+id/tipValue"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="end"
+                    android:text="@string/empty_cash"
+                    android:textSize="@dimen/text_size_normal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="@string/activity_main_subtotal"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <TextView
+                    android:id="@+id/subtotal"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="end"
+                    android:text="@string/empty_cash"
+                    android:textSize="@dimen/text_size_normal" />
+            </LinearLayout>
         </LinearLayout>
-
-
-    </LinearLayout>
+    </RelativeLayout>
 
 
 </RelativeLayout>
