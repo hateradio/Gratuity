@@ -3,6 +3,7 @@ package com.example.theory.gratuity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.SeekBar;
@@ -37,21 +38,19 @@ public class MainActivity extends AppCompatActivity {
 
         subtotal = (TextView) findViewById(R.id.subtotal);
 
-        currentTotal.setOnEditorActionListener(gratuityInputEvent);
+        currentTotal.setOnKeyListener(keyListener);
         gratuityBar.setOnSeekBarChangeListener(seekEvent);
     }
 
-    TextView.OnEditorActionListener gratuityInputEvent = new TextView.OnEditorActionListener() {
+    View.OnKeyListener keyListener = new View.OnKeyListener() {
         @Override
-        public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-
-            if (actionId == EditorInfo.IME_ACTION_DONE) {
+        public boolean onKey(View v, int keyCode, KeyEvent event) {
+            if (event.getAction() == KeyEvent.ACTION_UP) {
                 int progress = gratuityBar.getProgress();
                 double tip = progress * .01;
                 updateView(tip);
                 return true;
             }
-
             return false;
         }
     };
