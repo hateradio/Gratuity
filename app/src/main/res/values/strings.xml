@@ -16,4 +16,6 @@
     <string name="activity_main_subtotal">Subtotal:</string>
 
     <string name="activity_main_calculate">Calculate</string>
+    <string name="enter_amount">Please enter an amount</string>
+    <string name="tax">Tax</string>
 </resources>
